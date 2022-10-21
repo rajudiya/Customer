@@ -1,5 +1,5 @@
 {
-  "name": "Customer/Salesman",
+  "name": "customer/salesman",
   "description": "Customer Admin Grid",
   "type": "magento2-module",
   "version": "1.0.0",
@@ -15,7 +15,7 @@
       "registration.php"
     ],
     "psr-4": {
-      "Customer\\Salesman\\": ""
+      "customer\\salesman\\": ""
     }
   }
 }
