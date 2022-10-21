@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add 
+            id="Customer_Salesman::customersalesman" 
+            title="Customer" 
+            module="Customer_Salesman" 
+            sortOrder="10" 
+            resource="Customer_Salesman::customersalesman"
+        />
+        <add 
+            id="Customer_Salesman::add_row" 
+            title=" Customer Manu" 
+            module="Customer_Salesman" 
+            sortOrder="20" 
+            parent="Customer_Salesman::customersalesman" 
+            action="salesman/salesman" 
+            resource="Customer_Salesman::add_row"
+        />
+    </menu>
+</config>
