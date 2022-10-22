@@ -5,7 +5,7 @@
            comment="Costomer Table">
         <column xsi:type="smallint" name="id" padding="10" identity="true" unsigned="true" nullable="false" comment="Costomer id "/>
         <column xsi:type="varchar" name="name" nullable="false" length="255" comment="Costomer Name"/>
-        <column xsi:type="int" name="phone" unsigned="true" nullable="false" default="0" comment="Costomer Phone Number"/>
+        <column xsi:type="int" padding="50" name="phone" unsigned="true" nullable="false" default="0" comment="Costomer Phone Number"/>
         <column xsi:type="varchar" name="email" nullable="false" length="50" comment="Costomer Email Id"/>
         <column xsi:type="datetime" name="created_at" comment="Customer Created"/>
         <column xsi:type="datetime" name="update_at" comment="Customer Updated"/>
