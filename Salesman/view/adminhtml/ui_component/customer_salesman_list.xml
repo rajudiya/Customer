@@ -196,7 +196,7 @@
                </item>
            </argument>
         </column>
-        <actionsColumn name="delete_action" class="Customer\Salesman\Ui\Component\Listing\Columns\DeleteAction">
+        <actionsColumn name="delete_action" class="Customer\Salesman\Ui\Component\Listing\Column\DeleteAction">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="indexField" xsi:type="string">id</item>
