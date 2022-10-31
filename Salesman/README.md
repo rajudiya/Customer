@@ -5,18 +5,18 @@ URL: `http://mage244.com/admin/`
 
 ## Composer install
 
-- `composer config repositories.reponame vcs https://github.com/username/reponame`
-- `composer require vendername/observername`
+- `composer config repositories.reponame vcs https://github.com/rajudiya/reponame`
+- `composer require customer/salesman`
 
 ## Composer uninstall
 
-- `composer remove vendername/observername:branch name`
+- `composer remove customer/salesman`
 
 ## Preview will be added
 
-- `When Customer is login then Redirect on the Checkout Cart page Automatically`
-![products](/readme-images/Redirect.png "products on custom page")
-
+![salesman-option](/readme-images/salesman-option.png "Salesman Option")
+![salesman-grid](/readme-images/salesman-grid.png "Salesman Grid")
+![salesman-form](/readme-images/salesman-form.png "Salesman Form")
 
 ## Settings
 

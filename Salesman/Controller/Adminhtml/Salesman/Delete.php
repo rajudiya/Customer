@@ -24,7 +24,7 @@ class Delete extends Action
             $blogModel = $this->blogFactory->create();
             $blogModel->load($id);
             $blogModel->delete();
-            $this->messageManager->addSuccessMessage(__('You deleted the Salesman.'));
+            $this->messageManager->addSuccessMessage(__('Salesman Deleted'));
         } catch (\Exception $e) {
             $this->messageManager->addErrorMessage($e->getMessage());
         }

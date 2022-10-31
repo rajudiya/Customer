@@ -1,4 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!--
+/**
+ * Salesman Module Grid List
+ * @category  Practice Task
+ * @package   customer_salesmanisment
+ * @author    Rohan
+ */
+-->
 <listing xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Ui/etc/ui_configuration.xsd">
     <argument name="data" xsi:type="array">
         <item name="js_config" xsi:type="array">
@@ -6,21 +14,18 @@
             <item name="deps" xsi:type="string">customer_salesman_list.customer_salesman_list_data_source</item>
         </item>
         <item name="spinner" xsi:type="string">grid_records_columns</item>
-
         <item name="buttons" xsi:type="array">
             
             <!-- Goes to ui add/edit form -->
             <item name="addWithUi" xsi:type="array">
                 <item name="name" xsi:type="string">addWithUi</item>
-                <item name="label" xsi:type="string" translate="true">Add new Salesman</item>
+                <item name="label" xsi:type="string" translate="true">Add New Salesman</item>
                 <item name="class" xsi:type="string">primary</item>
-                <item name="url" xsi:type="string">*/*/add</item>
+                <item name="url" xsi:type="string">*/*/addrow</item>
             </item>
 
         </item>
     </argument>
-
-
     <dataSource name="customer_salesman_list_data_source">
         <argument name="dataProvider" xsi:type="configurableObject">
             <argument name="class" xsi:type="string">Magento\Framework\View\Element\UiComponent\DataProvider\DataProvider</argument>
@@ -39,7 +44,6 @@
             </item>
         </argument>
     </dataSource>
-
     <container name="listing_top">
         <argument name="data" xsi:type="array">
             <item name="config" xsi:type="array">
@@ -47,11 +51,8 @@
                 <item name="stickyTmpl" xsi:type="string">ui/grid/sticky/toolbar</item>
             </item>
         </argument>
-
         <bookmark name="bookmarks"/>
-
         <columnsControls name="columns_controls"/>
-
         <filters name="listing_filters">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -80,8 +81,7 @@
                 </item>
             </argument>
         </filters>
-
-        <massaction name="listing_massaction">
+        <!-- <massaction name="listing_massaction">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
                     <item name="selectProvider" xsi:type="string">customer_salesman_list.customer_salesman_list.grid_records_columns.ids</item>
@@ -89,16 +89,15 @@
                     <item name="indexField" xsi:type="string">id</item>
                 </item>
             </argument>
-            <!-- Mass actions which you want to add in your grid-->
-            <action name="edit">
+            <action name="delete">
                 <argument name="data" xsi:type="array">
                     <item name="config" xsi:type="array">
-                        <item name="type" xsi:type="string">edit</item>
-                        <item name="label" xsi:type="string" translate="true">Edit</item>
-                        <item name="url" xsi:type="url" path="*/*/massedit"/>
+                        <item name="type" xsi:type="string">delete</item>
+                        <item name="label" xsi:type="string" translate="true">Delete</item>
+                        <item name="url" xsi:type="url" path="*/*/massdelete"/>
                         <item name="confirm" xsi:type="array">
-                            <item name="title" xsi:type="string" translate="true">Edit</item>
-                            <item name="message" xsi:type="string" translate="true">Do you want to edit selected The Records</item>
+                            <item name="title" xsi:type="string" translate="true">Delete</item>
+                            <item name="message" xsi:type="string" translate="true">Do you want to delete selected Advertisments?</item>
                         </item>
                     </item>
                 </argument>
@@ -125,7 +124,7 @@
                     </actions>
                 </settings>
             </action>
-        </massaction>
+        </massaction> -->
         <paging name="listing_paging">
             <argument name="data" xsi:type="array">
                 <item name="config" xsi:type="array">
@@ -138,11 +137,8 @@
             </argument>
         </paging>
     </container>
-
-
-
     <columns name="grid_records_columns">
-        <selectionsColumn name="ids">
+       <!--  <selectionsColumn name="ids">
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
                    <item name="indexField" xsi:type="string">Id</item>
@@ -150,7 +146,7 @@
                    <item name="sortOrder" xsi:type="number">0</item>
                </item>
            </argument>
-        </selectionsColumn>
+        </selectionsColumn> -->
 
         <column name="name">
            <argument name="data" xsi:type="array">
@@ -187,28 +183,14 @@
                </item>
            </argument>
         </column>
-
-        <column name="update_at" >
+       <actionsColumn name="ui_actions" class="Customer\Salesman\Ui\Component\Listing\Column\Action">
            <argument name="data" xsi:type="array">
                <item name="config" xsi:type="array">
-                   <item name="filter" xsi:type="string">text</item>
-                   <item name="label" xsi:type="string" translate="true">Update Date</item>
+                   <item name="resizeEnabled" xsi:type="boolean">false</item>
+                   <item name="resizeDefaultWidth" xsi:type="string">107</item>
+                   <item name="indexField" xsi:type="string">id</item>
                </item>
            </argument>
-        </column>
-        <actionsColumn name="delete_action" class="Customer\Salesman\Ui\Component\Listing\Column\DeleteAction">
-            <argument name="data" xsi:type="array">
-                <item name="config" xsi:type="array">
-                    <item name="indexField" xsi:type="string">id</item>
-                    <item name="viewUrlPath" xsi:type="string">salesman/Salesman/delete</item>
-                    <item name="urlEntityParamName" xsi:type="string">id</item>
-                    <item name="sortOrder" xsi:type="number">50</item>
-                </item>
-            </argument>
-            <settings>
-                <label translate="true">Action</label>
-            </settings>
         </actionsColumn>
-
     </columns>
 </listing>

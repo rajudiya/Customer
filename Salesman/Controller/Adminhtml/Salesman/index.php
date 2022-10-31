@@ -35,8 +35,13 @@ class Index extends \Magento\Backend\App\Action
     {
         /** @var \Magento\Backend\Model\View\Result\Page $resultPage */
         $resultPage = $this->_resultPageFactory->create();
+        $resultPage->setActiveMenu('Customer_Salesman::customersalesman');
         $resultPage->getConfig()->getTitle()->set(__('All Salesman'));
         $result = $this->_Salesman->create()->getCollection();
         return $resultPage;
+    }
+        protected function _isAllowed()
+    {
+        return $this->_authorization->isAllowed('Customer_Salesman::salesman_list');
     }
 }
